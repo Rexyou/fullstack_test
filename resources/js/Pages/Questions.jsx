@@ -35,8 +35,8 @@ export default function Questions() {
         {errors.total_players && <div style="color:red"><b>{errors.total_players}</b></div>}
         <button type='submit'>Submit</button>
       </form>
-      {Object.values(otherErrors).map((error, index) => (
-        <span key={index} style="color:red;">{ error }</span>
+      {Object.values(otherErrors).length > 0 && Object.values(otherErrors).map((error, index) => (
+        <span key={index} style={{ color: 'red' }}>{ error }</span>
       ))}
     </div>
   )

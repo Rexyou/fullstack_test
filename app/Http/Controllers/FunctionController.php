@@ -18,7 +18,7 @@ class FunctionController extends Controller
     public function proceesQuestion(Request $request)
     {   
         // Prevent wrong input and validation
-        if(!$request->total_players || !is_int($request->total_players) ||$request->total_players <= 0 ){
+        if(!$request->total_players || !is_numeric($request->total_players) ||$request->total_players <= 0 ){
             return back()->withErrors("Input value does not exist or value is invalid");
         }
 
@@ -58,6 +58,9 @@ class FunctionController extends Controller
             $current_distribute = array_slice($total_cards, $cutpoint, $each_player);
             if(count($current_distribute) == 0){
                 $current_distribute = "No card available";
+            }
+            else {
+                $current_distribute = implode(", ", $current_distribute);
             }
             $player_card_list[] = $current_distribute;
             $cutpoint += $each_player;

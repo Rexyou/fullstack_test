@@ -15,3 +15,11 @@ Q1 Card Game
 ![q1_answer_7](https://github.com/Rexyou/fullstack_test/assets/17044873/64fb1526-2edc-4c0c-ac5e-25a383fc70e6)
 
 4. Take 3 hours for this test
+
+
+
+Q2 SQL Query
+1. Add index to related field in these Jobs, JobCategories, JobTypes
+2. Add fulltext for those using where field which need to use for search
+3. Too much left join might caused complexity so some of the query can be use `EXIST` for checking got related record in related table
+4. Take an hour for this test
